@@ -319,17 +319,24 @@ print(df_rcs_summary)
 9.3. Plotting (visualisations)
 -------------------------------
 
-The analysis modules contain plotting functions using matplotlib.
-These open a window with the corresponding chart (if you have a GUI environment).
+The analysis modules contain plotting functions using `matplotlib`.
+By default they open a window with the corresponding chart (if you
+have a GUI environment), but they can also save figures to disk.
 
-Example:
+### Interactive use
+
+```python
+from shipsig.db import get_connection
 from shipsig.analysis.acoustic import plot_acoustic_bands
 from shipsig.analysis.magnetic import plot_magnetic_axes
 from shipsig.analysis.rcs import plot_rcs_curve
 
-plot_acoustic_bands(conn, "Alpha")   # bar chart of acoustic bands
-plot_magnetic_axes(conn, "Alpha")    # magnetic field per axis
-plot_rcs_curve(conn, "Alpha")        # RCS vs. aspect angle
+conn = get_connection()
+
+# show plots in a window
+plot_acoustic_bands(conn, "Alpha")
+plot_magnetic_axes(conn, "Alpha")
+plot_rcs_curve(conn, "Alpha")
 
 10. IR Images and Computer Vision Features
 __________________________________________
@@ -464,6 +471,7 @@ defining more complex queries,
 integrating with external tools or dashboards.
 
 14. Kurze deutschsprachige Zusammenfassung
+___________________________________________________
 
 Dieses Projekt demonstriert in kompakter Form den Aufbau und die Pflege einer
 Signaturdatenbank für Schiffe (Akustik, Magnetik, RCS, IR) auf Basis einer
