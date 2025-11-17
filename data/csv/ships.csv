@@ -1,0 +1,4 @@
+id,name,class,displacement_t,length_m,beam_m
+1,Alpha,Corvette,1800,90,12
+2,Bravo,Frigate,3500,120,15
+3,Charlie,Patrol Boat,600,65,9
